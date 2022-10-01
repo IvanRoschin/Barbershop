@@ -5,5 +5,13 @@
   "reporters": [
     "...",
     "parcel-reporter-clean-dist"
-  ]
+  ],
+
+  "transformers": {
+    "*.svg": ["parcel-transformer-svg-sprite"]
+  },
+  "packagers": {
+    "*.html": "parcel-packager-svg-sprite"
+  }
 }
+
