@@ -2,13 +2,813 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <!-- project fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- custom styles -->
+    <link rel="stylesheet" href="../css/index.min.css">
+    <title>Barbershop</title>
   </head>
-  <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+  <body id="body">
+    <!-- header -->
+    <header class="header" id="header">
+      <div class="container header__container">
+        <!-- header-sidebar -->
+      <a class="logo" href="index.html" aria-label="Логотип сайта Barbershop">
+        <svg class="logo__svg" width="69" height="55">
+          <use href="../src/images/icons.svg#icon-logo"> </use>
+        </svg>
+      </a> 
+
+<!-- mobile-menu -->
+      
+<button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-container"  data-menu-button>
+  <svg class="" width="40" height="40" aria-label="Переключатель мобильного меню">
+    <use class="icon-cross" href="../src/images/icons.svg#icon-cross"></use>
+    <use class="icon-menu" href="../src/images/icons.svg#icon-menu"></use>
+  </svg>
+  </button>
+  <div class="mobile-menu" id="mobile-menu" data-menu>
+    <ul class="mobile-menu__nav list">
+      <li class="mobile-menu__item">
+        <a href="" class="mobile-menu__link link" href="#about">О нас</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="" class="mobile-menu__link link" href="#price">Услуги и цены</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="" class="mobile-menu__link link" href="#team">Мастера</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="" class="mobile-menu__link link" href="#contact">Контакты</a>
+      </li>
+    </ul>
+    <ul class="mobile-menu__contact list">     
+      <li class="mobile-menu__phone-link"><a  href="tel:+380961111111" class="mobile-menu__link link"></a>+38096 111 11 11</li>
+    </ul>
+    <button class="btn btn btn--mode-light mobile-menu__btn" data-modal-open type="button">Онлайн запись</button>
+  
+    <ul class="mobile-menu__socials list">
+      <li class="mobile-menu__item"><a  href="http://" target="_blank" rel="noopener noreferrer" class="mobile-menu__link link uppertitle uppertitle--mode-light">Instagram</a></li>
+      <li class="mobile-menu__item"><a  href="http://" target="_blank" rel="noopener noreferrer" class="mobile-menu__link link uppertitle">Yotube</a></li>
+    </ul>
+  </div>  
+    <nav class="navigation">
+      <ul class="navigation__list list">
+        <li class="navigation__item"><a class="link navigation__link current" href="#about">О нас</a></li>
+        <li class="navigation__item"><a class="link navigation__link" href="#price">Услуги и цены</a></li>
+        <li class="navigation__item"><a class="link navigation__link" href="#team">Мастера</a></li>
+        <li class="navigation__item"><a class="link navigation__link" href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header__group">
+      <a class="link header__phone" href="tel:+380441111111">+38 044 111 11 11</a>
+      <button class="btn btn btn--mode-dark header__btn" data-modal-open type="button">Онлайн запись</button>
+    </div>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal-wrapper">
+        <button class="modal-btn" data-modal-close><svg
+                      aria-label="Закрыть окно"
+                      width="18"
+                      height="18"
+                    >
+                      <use href="../src/images/icons.svg#icon-close"></use>
+                    </svg></button>
+        <strong class="modal-title">Оставьте заявку</strong>
+        modal-form 
+        <form class="modal-form" autocomplete="off">
+          Данные пользователя
+        <label class="modal-form__group">
+         <span class="modal-form__label">Имя</span>
+          <input
+                class="modal-form__input"
+                type="text"
+                name="user-name"
+                placeholder=" "
+                      />
+        <span class="modal-form__alert modal-form__alert--warning">
+          Имя состоит только из букв
+          <svg
+          class="modal-form__alert-icon modal-form__alert-icon--warning"
+          aria-label="предупреждение"
+          width="15"
+          height="15"
+                    >
+      <use href="../src/images/icons.svg#icon-warning"></use>
+        </svg>
+        </span>
+
+        <span class="modal-form__alert modal-form__alert--error">
+          Вы ввели некоректные данные
+          <svg
+          class="modal-form__alert-icon modal-form__alert-icon--error"
+          aria-label="ошибка"
+          width="15"
+          height="15"
+                    >
+      <use href="../src/images/icons.svg#icon-error"></use>
+      </svg>
+
+        </span>
+        <svg
+            class="modal-form__icon"
+            aria-label="имя клиента"
+            width="18"
+            height="18"
+                      >
+        <use href="../src/images/icons.svg#icon-persone"></use>
+        </svg>
+          </label>
+          <label class="modal-form__group">
+            <span class="modal-form__label">Телефон</span>
+             <input
+                   class="modal-form__input"
+                   type="phone"
+                   name="user-phone"
+                   placeholder=" "
+                         />
+           
+           <span class="modal-form__alert modal-form__alert--warning">
+             Номер телефона должен состоять только из цифр
+             <svg
+             class="modal-form__alert-icon modal-form__alert-icon--warning"
+             aria-label="предупреждение"
+             width="15"
+             height="15"
+                       >
+         <use href="../src/images/icons.svg#icon-warning"></use>
+           </svg>
+           </span>
+   
+           <span class="modal-form__alert modal-form__alert--error">
+             Вы ввели некоректные данные
+             <svg
+             class="modal-form__alert-icon modal-form__alert-icon--error"
+             aria-label="ошибка"
+             width="15"
+             height="15"
+                       >
+         <use href="../src/images/icons.svg#icon-error"></use>
+         </svg>
+   
+           </span>
+           <svg
+               class="modal-form__icon"
+               aria-label="номер клиента"
+               width="18"
+               height="18"
+                         >
+           <use href="../src/images/icons.svg#icon-phone"></use>
+           </svg>
+          </label>
+          <label class="modal-form__group">
+              <span class="modal-form__label">e-mail</span>
+               <input
+                     class="modal-form__input"
+                     type="mail"
+                     name="user-mail"
+                     placeholder=" "
+                           />
+             
+             <span class="modal-form__alert modal-form__alert--warning">
+               e-mail состоит из букв латинского алфавита, специальных знаков и цифр
+               <svg
+               class="modal-form__alert-icon modal-form__alert-icon--warning"
+               aria-label="предупреждение"
+               width="15"
+               height="15"
+                         >
+           <use href="../src/images/icons.svg#icon-warning"></use>
+             </svg>
+             </span>
+     
+             <span class="modal-form__alert modal-form__alert--error">
+               Вы ввели некоректные данные
+               <svg
+               class="modal-form__alert-icon modal-form__alert-icon--error"
+               aria-label="ошибка"
+               width="15"
+               height="15"
+                         >
+           <use href="../src/images/icons.svg#icon-error"></use>
+           </svg>
+     
+             </span>
+             <svg
+                 class="modal-form__icon"
+                 aria-label="e-mail клиента"
+                 width="18"
+                 height="18"
+                           >
+             <use href="../src/images/icons.svg#icon-mail"></use>
+             </svg>
+          </label>
+          <!-- payment checkbox (радио кнопки) -->
+          <p class="modal-form__subtitle">Выберите форму оплаты</p>
+          <div class="modal-form__pay-type">
+                <label class="modal-form__pay-group">
+                    <input class="modal-form__checkbox visually-hidden" type="radio" name="user-pay" checked>
+                    <svg
+                    class="modal-form__pay-option"
+                    aria-label="Master-card"
+                    width="40"
+                    height="40"
+                              >
+                <use href="../src/images/icons.svg#icon-ms-card"></use>
+                </svg>
+                </label>
+                <label class="modal-form__pay-group">
+                    <input class="modal-form__checkbox visually-hidden" type="radio" name="user-pay">
+                    <svg
+                    class="modal-form__pay-option"
+                    aria-label="visa"
+                    width="40"
+                    height="40"
+                              >
+                <use href="../src/images/icons.svg#icon-visa"></use>
+                </svg>
+                </label>
+          </div>
+          <!-- Политика приватности (чекбокс) -->
+          <label class="modal-form__policy-group">
+          <input
+            class="modal-form__checkbox visually-hidden"
+            type="checkbox"
+            name="policy"
+            value="policy"
+          />
+
+          <span class="modal-form__custom-checkbox">
+          <svg class="modal-form__custom-checkbox-icon" aria-label="check" width="16" height="15">
+            <use href="../src/images/icons.svg#icon-check"></use>
+          </svg>
+        </span>
+
+          <span class="modal-form__policy-description"
+            >Соглашаюсь с                     
+            <a
+              class="modal-form__link link"
+              href="./index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Политикой</a
+            > использования персональных данных</span
+          >
+          </label>
+          <button class="btn btn--mode-light modal-form__submit-btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+</div>
+    </header>
+    <!-- main -->
+    <main class="main">
+      <!-- hero  -->
+        <section class="hero" id="hero">
+        <div class="container hero__container">
+      <div class="hero__left-side">
+        <ul class="hero__list socials-link-list list">
+        <li class="hero__item">
+          <a class="hero__link link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </li>
+        <li class="hero__item">
+          <a class="hero__link link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a>
+        </li>
+      </ul>
+      </div>
+      <div class="hero__group">
+        <p class="uppertitle uppertitle--mode-dark hero__uppertitle" lang="en">A hair salon for men in Kyiv</p>
+        <h1 class="main-title" lang="en">BarberShop</h1>
+        <p class="subtitle subtitle-title--mode-dark hero__subtitle" lang="en">
+          We are experts in trendy men's haircuts. <br />
+          We work quickly, carefully, and tastefully.
+        </p>
+      </div>
+      <div class="slider">
+        <ul class="slider__pagination list">
+          <li class="slider__item slider__item--active"><a href=""></a></li>
+          <li class="slider__item"><a href=""></a></li>
+          <li class="slider__item"><a href=""></a></li>
+        </ul>
+
+        <ul class="slider__controls list">
+          <li class="slider__item-controls"> 
+            <button class="slider__btn slider__btn--disable" type="button">Назад</button></li>
+
+          <li class="slider__item-controls"> 
+            <button class="slider__btn" type="button">Вперед</button></li>
+        </ul>
+        </div>
+      </section>
+
+      <!-- section about -->
+      <section class="section about" id="about">
+        <div class="container about__container">
+        <ul class="about-list list">
+          <li class="about-list__item">
+            <img class="about-list__img"
+              src="../src/images/about/img-1.jpg"
+              alt="Стрижка бороды"
+              width="270"
+              height="445"
+            />
+          </li>
+          <li class="about-list__item">
+            <img class="about-list__img"
+              src="../src/images/about/img-2.jpg"
+              alt="Стрижка головы"
+              width="270"
+              height="445"
+            />
+          </li>
+        </ul>
+        <div class="about__group" data-aos="fade-left">
+          <p class="uppertitle uppertitle--mode-light">О нас</p>
+          <h2 class="section-title section-title--mode-light">Лучший Барбершоп твоего города</h2>
+          <p class="subtitle subtitle-title--mode-light about__subtitle">
+              Если ты хочешь добавить в свой образ больше уверенности – тебе
+              точно к нам.
+            </p>
+          <p class="about__description">
+              Мы команда, которая никогда не останавливается на достигнутом и
+              жаждет перемен. И когда ты попадешь в руки нашего мастера, то уже
+              никогда не сможешь быть прежним. Мы команда, которая всегда с
+              клиентами "на одной волне". Поэтому, мы всегда готовы
+              усовершенствовать каждого, кто к нам приходит!
+            </p>
+        <button class="btn btn--mode-light" type="button">Онлайн запись</button>
+        </div>
+      </section>
+
+      <!-- section services -->
+      <section class="section services" id="price">
+        <div class="container">
+        <p class="uppertitle uppertitle--mode-dark">Проведи время в компании лучших мастеров</p>
+        <h2 class="section-title section-title--mode-dark">Услуги и цены</h2>
+        <ul class="price-list list">
+          <li class="price-list__item price-list__item--left-side">
+            <ul class="price-list__inner-list list">
+              <li class="price-list__inner-item"><span>Мужская стрижка</span> <span>от 300 грн.</span></li>
+              <li class="price-list__inner-item"><span>Стрижка бороды</span> <span>от 200 грн.</span></li>
+              <li class="price-list__inner-item"><span>Стрижка усов</span> <span>от 200 грн.</span></li>
+              <li class="price-list__inner-item"><span>Бритье опасной бритвой</span> <span>от 200 грн.</span></li>
+            </ul>
+          </li>
+          <li class="price-list__item price-list__item--right-side">
+              <ul class="price-list__inner-list list">
+               <li class="price-list__inner-item"><span>Cтрижка у стажера</span> <span>от 50 грн.</span></li>
+               <li class="price-list__inner-item"><span>Стрижка под насадку</span> <span>от 200 грн.</span></li>
+               <li class="price-list__inner-item"><span>Детская стрижка (до 12 лет)</span> <span>от 300 грн.</span></li>
+               <li class="price-list__inner-item"><span>Камуфлирование седины</span> <span>от 200 грн.</span></li> 
+            </ul>
+          </li>
+        </ul>
+        <button class="btn btn--mode-dark services__btn" type="button">Онлайн запись</button>
+        </div>
+      </section>
+
+      <!-- benefits -->
+      <section class="section benefits">
+        <div class="container benefits__container">
+        <ul class="benefits-list list">
+          <li class="benefits-list__item">
+            <p class="benefits-list__amount">600 <sup class="benefits-list__amount--decor">+</sup></p>
+            <p class="benefits-list__text"> Довольных клиентов в день</p>
+          </li>
+          <li class="benefits-list__item">
+            <p class="benefits-list__amount">50 <sup class="benefits-list__amount--decor">+</sup></p>
+            <p class="benefits-list__text">Наград за отличный сервис</p>
+          </li>
+          <li class="benefits-list__item">
+            <p class="benefits-list__amount">20 <sup class="benefits-list__amount--decor">+</sup></p>
+            <p class="benefits-list__text">Лучших мастеров Киева</p>
+          </li>
+          <li class="benefits-list__item">
+            <p class="benefits-list__amount">100 <sup class="benefits-list__amount--decor">+</sup></p>
+            <p class="benefits-list__text">Подарков постоянным клиентам</p>
+          </li>
+        </ul>
+        <div class="benefits-group">
+        <p class="uppertitle uppertitle--mode-light">Старая традиционная школа</p>
+        <h2 class="section-title section-title--mode-light">Почему приходят <br> именно к нам?</h2>
+        <p class="subtitle subtitle-title--mode-light">
+          О нас говорят только хорошее. Но лучше 1 раз увидеть и прочувствовать,
+          чем 10 раз прочитать.
+        </p>
+      </div>
+       </div>
+      </section>
+
+      <!-- members -->
+      <section class="section members" id="team">
+        <div class="container">
+        <p class="uppertitle uppertitle--mode-light">для настоящих ценителей атмосферы</p>
+        <h2 class="section-title section-title--mode-light">Наши мастера</h2>
+        <ul class="member list grid"> 
+          <li class="member__item grid-item" data-aos="zoom-in-up" data-aos-delay="300">
+          <img class="member__img" src="../src/images/team/member-1.jpg" alt="John Smith" width="370" height="346" />
+          <div class="member__group">
+            <h3 class="member__title" lang="en">John Smith</h3>
+            <p class="member__position" lang="en">Extreme Barber</p>
+          </div>
+            <ul class="socials list">
+              <li class="socials__item">
+                <a class="socials__link link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-instagram"></use></svg></a>
+                </li>
+                 <li class="socials__item">
+                <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-twitter"></use></svg></a>
+                </li>
+                  <li class="socials__item">
+                <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-facebook"></use></svg></a>
+                </li>
+                  <li class="socials__item">
+                <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-linkedin"></use></svg></a>
+                </li>
+            </ul>
+          </li>
+          <li class="member__item grid-item" data-aos="zoom-in-up" data-aos-delay="600">
+            <img class="member__img" src="../src/images/team/member-2.jpg" alt="Michele Doe" width="370" height="346" />
+          <div class="member__group">
+            <h3 class="member__title">Michele Doe</h3>
+             <p class="member__position" lang="en">Extreme Barber</p>
+          </div>
+          <ul class="socials socials-list list">
+            <li class="socials__item">
+              <a class="socials__link link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-instagram"></use></svg></a>
+              </li>
+               <li class="socials__item">
+              <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-twitter"></use></svg></a>
+              </li>
+                <li class="socials__item">
+              <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-facebook"></use></svg></a>
+              </li>
+                <li class="socials__item">
+              <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-linkedin"></use></svg></a>
+              </li>
+          </ul>
+          </li>
+          <li class="member__item grid-item" data-aos="zoom-in-up" data-aos-delay="900">
+            <img class="member__img" src="../src/images/team/member-3.jpg" alt="Alan Black" width="370" height="346" />
+          <div class="member__group"> 
+            <h3 class="member__title" lang="en">Alan Black</h3>
+            <p class="member__position" lang="en">Extreme Barber</p>
+          </div>
+          <ul class="socials socials-list list">
+            <li class="socials__item">
+              <a class="socials__link link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-instagram"></use></svg></a>
+              </li>
+               <li class="socials__item">
+              <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-twitter"></use></svg></a>
+              </li>
+                <li class="socials__item">
+              <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-facebook"></use></svg></a>
+              </li>
+                <li class="socials__item">
+              <a class="socials__link" href="http://" target="_blank" rel="noopener noreferrer">
+                <svg class="socials__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-linkedin"></use></svg></a>
+              </li>
+          </ul>
+          </li>
+        </ul>
+       </div>
+     
+      </section>
+
+      <!-- gallery -->
+      <section class="section gallery">
+        <div class="container">
+        <p class="uppertitle uppertitle--mode-light gallery-uppertitle">На латинском языке “барба” означает “борода”</p>
+        <h2 class="title visually-hidden visually-hidden" >Примеры наших работ</h2>   
+        <ul class="gallery-list list grid">
+          <li class="gallery-list__item grid-item">
+            <picture>   
+              <!-- Набор изображений для destop -->
+              <source 
+              media="(min-width:1200px)" 
+              srcset="
+              ../src/images/gallery/gallery-1_lg.jpg 1x,
+              ../src/images/gallery/gallery-1_lg@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+              <!-- Набор изображений для таблетки -->
+              <source 
+              media="(min-width:768px)" 
+              srcset="
+              ../src/images/gallery/gallery-1_md.jpg 1x,
+              ../src/images/gallery/gallery-1_md@2x.jpg 2x
+              " 
+              type="image/jpg"
+              />
+              <!-- Набор изображений для мобилки -->
+              <source 
+              media="(max-width:767px)" 
+              srcset="
+              ../src/images/gallery/gallery-1_sm.jpg 1x,
+              ../src/images/gallery/gallery-1_sm@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+            <!-- Дефолтное изображение -->
+            <img class="gallery-list__img" 
+            src="../src/images/gallery/gallery-1_sm.jpg" 
+            alt="" 
+            width="418" 
+            height="360"
+            loading="lazy"
+            />
+          </picture>
+          </li>
+          <li class="gallery-list__item  grid-item">
+            <picture>
+               
+              <!-- Набор изображений для destop -->
+
+              <source 
+              media="(min-width:1200px)" 
+              srcset="
+              ../src/images/gallery/gallery-2_lg.jpg 1x,
+              ../src/images/gallery/gallery-2_lg@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+
+              <!-- Набор изображений для таблетки -->
+
+              <source 
+              media="(min-width:768px)" 
+              srcset="
+              ../src/images/gallery/gallery-2_md.jpg 1x,
+              ../src/images/gallery/gallery-2_md@2x.jpg 2x
+              " 
+              type="image/jpg"
+              />
+              <!-- Набор изображений для мобилки -->
+
+              <source 
+              media="(max-width:767px)" 
+              srcset="
+              ../src/images/gallery/gallery-2_sm.jpg 1x,
+              ../src/images/gallery/gallery-2_sm@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+           
+            <!-- Дефолтное изображение -->
+            <img class="gallery-list__img" 
+            src="../src/images/gallery/gallery-2_sm.jpg" 
+            alt="" 
+            width="418" 
+            height="360"
+            loading="lazy"
+            />
+          </picture>
+          </li> 
+          <li class="gallery-list__item  grid-item">
+            <picture>
+               
+              <!-- Набор изображений для destop -->
+
+              <source 
+              media="(min-width:1200px)" 
+              srcset="
+              ../src/images/gallery/gallery-3_lg.jpg 1x,
+              ../src/images/gallery/gallery-3_lg@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+
+              <!-- Набор изображений для таблетки -->
+
+              <source 
+              media="(min-width:768px)" 
+              srcset="
+              ../src/images/gallery/gallery-3_md.jpg 1x,
+              ../src/images/gallery/gallery-3_md@2x.jpg 2x
+              " 
+              type="image/jpg"
+              />
+              <!-- Набор изображений для мобилки -->
+
+              <source 
+              media="(max-width:767px)" 
+              srcset="
+              ../src/images/gallery/gallery-3_sm.jpg 1x,
+              ../src/images/gallery/gallery-3_sm@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+           
+            <!-- Дефолтное изображение -->
+            <img class="gallery-list__img" 
+            src="../src/images/gallery/gallery-3_sm.jpg" 
+            alt="" 
+            width="418" 
+            height="360"
+            loading="lazy"
+            />
+          </picture>
+          </li>        
+          <li class="gallery-list__item  grid-item">
+            <picture>
+               
+              <!-- Набор изображений для destop -->
+
+              <source 
+              media="(min-width:1200px)" 
+              srcset="
+              ../src/images/gallery/gallery-4_lg.jpg 1x,
+              ../src/images/gallery/gallery-4_lg@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+
+              <!-- Набор изображений для таблетки -->
+
+              <source 
+              media="(min-width:768px)" 
+              srcset="
+              ../src/images/gallery/gallery-4_md.jpg 1x,
+              ../src/images/gallery/gallery-4_md@2x.jpg 2x
+              " 
+              type="image/jpg"
+              />
+              <!-- Набор изображений для мобилки -->
+
+              <source 
+              media="(max-width:767px)" 
+              srcset="
+              ../src/images/gallery/gallery-4_sm.jpg 1x,
+              ../src/images/gallery/gallery-4_sm@2x.jpg 2x
+              " 
+              type="image/jpg" 
+              />
+           
+            <!-- Дефолтное изображение -->
+            <img class="gallery-list__img" 
+            src="../src/images/gallery/gallery-4_sm.jpg" 
+            alt="" 
+            width="418" 
+            height="360"
+            loading="lazy"
+            />
+          </picture>
+          </li>  
+        </ul>
+        </div>
+      </section>
+
+      <!-- contacts -->
+      <section class="section contacts" id="contact">
+        <div class="container contacts__container">
+       <div class="contact contact--left-side">
+        <h2 class="section-title section-title--mode-dark contact__section-title">Онлайн запись</h2>
+
+        <form class="contact-form" name="contact-form" action="./js/method.js" method="post">
+          <div class="contact-form__wrapper">
+          <label class="contact-form__group">
+            <input
+              class="contact-form__input"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Сергій"
+            />
+            <span class="contact-form__label">Имя*</span>
+            <svg
+              class="contact-form__icon"
+              aria-label="имя клиента"
+              width="18"
+              height="18"
+            >
+              <use href="../src/images/icons.svg#icon-persone"></use>
+            </svg>
+          </label>
+
+          <label class="contact-form__group">
+            <input
+              class="contact-form__input"
+              type="text"
+              id="user-phone"
+              name="user-phone"
+              placeholder="+38 099 123 45 67"
+            />
+            <span class="contact-form__label">Телефон*</span>
+            <svg
+              class="contact-form__icon"
+              aria-label="номер телефоа"
+              width="18"
+              height="18"
+            >
+              <use href="../src/images/icons.svg#icon-phone-form"></use>
+            </svg>
+          </label>
+        </div>
+
+          <label class="contact-form__message" for="coment">
+            <textarea
+              class="contact-form__message-input"
+              name="user-message"
+              id="coment"
+              cols="3"
+              rows="2"
+              placeholder="Ваш коментарий..."
+            ></textarea>
+            <span class="contact-form__label">сообщение</span>
+
+          </label>
+
+          <button class="btn btn--mode-dark contact-form__bnt" type="submit">Отправить</button>
+
+        </form>
+        </div>
+        <div class="contact contact--right-side">
+        <p class="section-title section-title--mode-dark contact__section-title">Контакты</p>
+        <address>
+          <ul class="icons-list list">
+            <li class="icons-list__item">
+              <svg class="icons-list__icon" width="24" height="24" aria-label="Адрес компании">
+                <use href="../src/images/icons.svg#icon-map-pin"></use></svg>
+              ул. Васильковая, 7А Киев, 08132</li>
+            <li class="icons-list__item">
+              <svg class="icons-list__icon" width="24" height="24">
+                <use href="../src/images/icons.svg#icon-phone" aria-label="контактный телефон"></use></svg>
+              <a class="link" href="tel:+380441111111">+38 044 111 11 11</a></li>
+            <li class="icons-list__item">
+              <svg class="icons-list__icon" width="24" height="24" aria-label="контактный е-мейл"><use href="../src/images/icons.svg#icon-mail">
+            </use></svg>
+              <a class="link" href="mailto:barbershop@email.com">barbershop@email.com</a>
+            </li>
+          </ul>
+        </address>
+        <p class="contact__time-title uppertitle uppertitle--mode-dark">Время работы</p>
+        <p class="contact__time">Ежедневно </time>с 9:00 до 22:00</time></p>
+        </div>
+        </div>
+      </section>
+    </main>
+    <!--footer-->
+    <footer class="footer">
+      <div class="container footer__container">
+      <p class="footer__copyright">&#169; Copyright 2020</p>
+      <ul class="footer-links list">
+        <li class="footer-links__item">
+          <a class="footer-links__link link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </li>
+        <li>
+          <a class="footer-links__link link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a>
+        </li class="footer-links__item">
+      </ul>
+      </div>
+    </footer>
+       <a class="scroll-to-top" href="#hero">
+      <svg class="arrow-top" width="20" height="20">
+        <use href="../src/images/icons.svg#arrow-top"></use>
+      </svg>
+    </a>
+
+    <!-- <div class="chat-menu">
+      <button class="chat-menu__btn" type="button"></button>
+      <ul class="chat-menu__list list">
+              <li class="chat-menu__item" style="--item: 1">
+                <a class="link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="chat-menu__icon" width="20" height="20" aria-label="Инстарграм"><use href="../src/images/icons.svg#icon-instagram"></use></svg></a>
+                </li>
+              <li class="chat-menu__item" style="--item: 2">
+                <a class="link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="chat-menu__icon" width="20" height="20" aria-label="Твитер"><use href="../src/images/icons.svg#icon-twitter"></use></svg></a>
+                </li>
+              <li class="chat-menu__item" style="--item: 3">
+                <a class="link" href="http://" target="_blank" rel="noopener noreferrer">
+                  <svg class="chat-menu__icon" width="20" height="20" aria-label="Фейсбук"><use href="../src/images/icons.svg#icon-facebook"></use></svg></a>
+                </li>
+        </li>
+      </ul>
+    </div> -->
+
+   
+    <script src="./js/menu.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/header-scroll.js"></script>
+    <!-- AOS aniamtion library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/animations.js"></script>
+
   </body>
 </html>
