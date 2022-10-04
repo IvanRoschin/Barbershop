@@ -1,0 +1,51 @@
+/*#region gallery*/
+.gallery {
+    background-color: var(--main-bg-cl);
+    &__uppertitle {
+        margin-bottom: 44px;
+      }
+  }
+  
+  .gallery-list {
+    justify-content: center;
+
+      &__item {
+        position: relative;
+      
+        --items: 1;
+
+        @include mq(tablet) {
+          --items: 1;
+        }
+
+        @include mq(desktop) {
+          --items: 4;
+        }
+      }
+
+      &__item::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+      
+        content: ' ';
+        display: block;
+        width: 100%;
+        height: 100%;
+        // background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      &__img {
+        @include mq(tablet) {
+          width: 330px;
+          height: 360px;
+        }
+
+        @include mq(desktop) {
+          width: 270px;
+          height: 360px;
+        }
+      }
+  }
+ 
+  /*#endregion*/

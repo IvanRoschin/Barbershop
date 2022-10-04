@@ -1,0 +1,128 @@
+/*#region hero*/
+.hero {
+    max-width: 480px;
+
+    min-height: 580px;
+
+    margin: 0 auto;
+  
+    background-color: var(--dark-bg-cl);
+    background-image:
+      url('../images/slider/slider-img-3.jpg'),
+      linear-gradient(to right, #fff 12%, #191C26 12%);
+    background-size: 480px 680px, contain;
+    background-position: top right, center;
+    background-repeat: no-repeat;
+
+    
+    @include mq(tablet) {
+      min-height: 680px;
+
+      max-width: 720px;
+      background-image:
+      url('../images/slider/slider-img-3.jpg'),
+      linear-gradient(to right, #fff 15%, #191C26 15%);
+      background-size: 615px 680px, contain;
+
+    }
+    
+    @include mq(desktop) {
+      max-width: 1280px;
+      background-size: 1125px 680px, contain;
+
+    }
+
+    &__container {
+      display: flex;
+      position: relative;
+    }
+
+    &__left-side {
+      display: flex;
+      align-items: flex-end;
+        
+      width: 100px;
+
+      @include mq(mobile-only) {
+        display: none;
+      }
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      transform: rotate(-90deg) translateY(100%);
+      transform-origin: left top;
+    }
+
+    &__list::before {
+      content: '';
+      display: block;
+      width: 60px;
+      border-bottom: 1px solid;
+      margin-right: 40px;
+      color: var(--btn-dark-cl);
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &__link {
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 1.36;
+      letter-spacing: 0.2em;
+      color: var(--btn-dark-cl);
+    
+      transition: var(--transition-duration) var(--transition-timing-function);
+    }
+    
+    &__link:hover,
+    &__link:focus {
+      color: var(--accent-cl);
+    }
+
+    &__group {
+      flex-grow: 1;
+      margin-left: 31px;
+      margin-top: 208px;
+      margin-bottom: 183px;
+
+      @include mq(tablet) {
+      margin-top: 272px;
+      margin-left: 120px;
+      margin-bottom: 181px;
+      }
+
+      @include mq(desktop) {
+        margin-left: 100px;
+        margin-bottom: 206px;
+        }
+    }
+
+    &__uppertitle {
+      animation: fade-left-to-right 0.6s var(--transition-timing-function);
+    }
+
+    &__subtitle {
+      width: 476px;
+      animation: fade-bootom-to-top 2s var(--transition-timing-function);
+    }
+      
+  }
+     
+  .main-title {
+    margin-bottom: 20px;
+   
+    @include fonts(700, 48px, 56px, 0.05em); 
+    color: var(--main-bg-cl);
+    animation: fade-left-to-right 1s ease-out;
+
+    @include mq(desktop) {
+      font-size: 72px;
+    }
+ 
+  }
+  
+  /*#endregion*/

@@ -1,0 +1,68 @@
+/*#region header*/
+.header {
+    position: fixed;
+    top: 0;
+    width: 100vh;
+    // min-height: 80px;
+
+    /* background-color: rgba(24, 27, 37, 0.4); */
+    z-index: 1;
+
+    &__container {
+        display: flex;
+        align-items: center;  
+      }
+}
+  
+.logo {
+    margin-top: 20px;
+    // margin-right: 71px;
+  }
+
+  .logo__svg {
+    @include mq(mobile-only) {
+      fill: var(--main-bg-cl);
+    }
+  }
+  
+  
+.header__group {
+  @include mq(mobile-only) {
+    display: none;
+  }
+   display: flex;
+   align-items: center;
+   margin-left: auto;
+
+   @include mq(tablet-only) {
+    flex-direction: column-reverse;
+   }
+}
+      
+.header__phone {
+        display: block;
+        color:var(--secondary-txt-cl);
+        @include fonts (600, 12px, 1.33, 0.1em);
+        text-decoration: none;
+      
+        transition: color var(--transition-duration) var(--transition-timing-function);
+        
+        @include mq(tablet-only) {
+          margin-top: 20px;
+          }
+        @include mq(desktop) {
+        margin-right: 40px;
+        }
+      }
+      
+      
+.header__phone:hover,
+.header__phone:focus {
+        color: var(--accent-cl);
+}
+      
+.header__btn {
+        animation: swing 6s ease-in-out infinite forwards;
+      }
+   
+/*#endregion*/

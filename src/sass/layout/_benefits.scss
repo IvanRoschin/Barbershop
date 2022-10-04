@@ -1,0 +1,81 @@
+/*#region benefits*/
+.benefits {
+    background-color: var(--main-bg-cl);
+
+    &__container {
+
+      display: flex;
+      justify-content: center;
+
+      flex-direction: column-reverse;
+
+      @include mq(desktop) {
+        flex-direction: row;
+      }
+      }
+  }
+    
+  .benefits-list {
+    width: 370px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: auto;
+
+    &__item {
+        width: 170px;
+        padding: 20px;
+        background-color: var(--secondary-bg-cl);
+      }
+
+      &__item:nth-child(2n) {
+        margin-left: 30px;
+        margin-top: 30px;
+      }
+
+      &__amount {
+        position: relative;
+        margin-bottom: 6px;
+
+        @include fonts(700, 42px, 57px, 0.05em);
+      
+        color: var(--btn-dark-cl);
+      }
+
+      &__amount--decor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include fonts(600, 16px, 22px, 0.02em);
+
+        text-align: center;
+      
+        color: var(--accent-cl);
+      }
+
+      &__text {
+        @include fonts(600, 11px, 15px, 0.02em);
+
+        letter-spacing: normal;
+        text-align: center;
+      
+        color: var(--btn-dark-cl);
+      }
+  }
+  
+  .benefits-group {
+    width: 430px;
+    margin-bottom: 44px;
+
+    @include mq(tablet) {
+      width: 500px;
+
+    }
+
+    @include mq(desktop) {
+      margin-left: 130px;
+    }
+    
+  }
+  
+  /*#endregion*/

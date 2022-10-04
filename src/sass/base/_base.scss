@@ -1,0 +1,32 @@
+/*#region base*/
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--main-txt-cl); 
+    font-family: var(--main-font);
+    @include fonts(400, 14px, 26px, 0.02em);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*#endregion*/

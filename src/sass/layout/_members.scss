@@ -1,0 +1,75 @@
+/*#region members*/
+.member {
+  background-color: var(--secondary-bg-cl);
+justify-content: center;
+     /* member-card */
+  &__item {
+    --items:1;
+
+    @include mq(desktop) {
+      --items:3;
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    @include fonts(400, 18px, 25px, 0.02em);
+   
+    text-align: center;
+    color: var(--btn-dark-cl);
+  
+    margin-bottom: 8px;
+  }
+
+  &__position {
+    @include fonts(400, 14px, 19px, 0.02em);
+    
+    text-align: center;
+    color: var(--accent-cl);
+  
+    margin-bottom: 30px;
+ }
+
+}
+  
+  /* Social icons */
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__item:not(:last-child) {
+        margin-right: 10px;
+      }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        width: 44px;
+        height: 44px;
+      
+        background-color: var(--main-bg-cl);
+        color: var(--btn-dark-cl);
+      
+        border-radius: 50%;
+      
+        transition: 
+        fill var(--transition-duration) var(--transition-timing-function),
+        color var(--transition-duration) var(--transition-timing-function);
+      }
+
+      &__link:hover,
+      &__link:focus {
+        color: var(--accent-cl);
+      }
+
+      &__icon {
+        fill: currentColor;
+      }
+  }  
+  /*#endregion*/
